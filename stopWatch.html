@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Stopwatch</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="stopWatch.css" />
+  </head>
+  <body>
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="card p-4 shadow-lg" style="width: 300px">
+            <h2 class="text-center mb-3">Stopwatch</h2>
+            <div class="display text-center mb-3">
+                <span id="timeDisplay">0.00</span>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button id="startStopButton" class="btn btn-primary btn-lg">Start</button>
+                <button id="reset" class="btn btn-danger btn-lg">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"></script>
+    <script src="stopWatch.js"></script>
+  </body>
+</html>
