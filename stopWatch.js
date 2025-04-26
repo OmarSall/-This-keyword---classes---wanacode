@@ -1,4 +1,9 @@
 class StopWatch {
+  static BUTTON_TEXT = {
+    START: "Start",
+    STOP: "Stop",
+  };
+
   constructor() {
     this.time = 0;
     this.isRunning = false;
@@ -7,7 +12,10 @@ class StopWatch {
     this.startStopButton = document.getElementById("startStopButton");
     this.resetButton = document.getElementById("resetButton");
 
-    this.startStopButton.addEventListener("click", this.toggleStartStop.bind(this));
+    this.startStopButton.addEventListener(
+      "click",
+      this.toggleStartStop.bind(this)
+    );
     this.resetButton.addEventListener("click", this.reset.bind(this));
   }
 
@@ -18,13 +26,13 @@ class StopWatch {
   toggleStartStop() {
     if (this.running) {
       clearInterval(this.intervalId);
-      this.startStopButton.textContent = "Start";
+      this.startStopButton.textContent = StopWatch.BUTTON_TEXT.START;
     } else {
       this.intervalId = setInterval(() => {
         this.time += 0.01;
         this.updateDisplay();
       }, 10);
-      this.startStopButton.textContent = "Stop";
+      this.startStopButton.textContent = StopWatch.BUTTON_TEXT.STOP;
     }
     this.running = !this.running;
   }
@@ -33,7 +41,7 @@ class StopWatch {
     clearInterval(this.intervalId);
     this.time = 0;
     this.updateDisplay();
-    this.startStopButton.textContent = "Start";
+    this.startStopButton.textContent = StopWatch.BUTTON_TEXT.START;
     this.running = false;
   }
 }
